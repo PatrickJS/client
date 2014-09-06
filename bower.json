@@ -1,0 +1,22 @@
+{
+  "name": "challengewithfriends",
+  "version": "0.0.1",
+  "description": "ChallengeWithFriends",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mgonto/meaner.git"
+  },
+  "ignore": [
+    "node_modules"
+  ],
+  "dependencies": {
+    "angular": "1.3.0-rc.0",
+    "angular-cookies": "1.3.0-rc.0",
+    "angular-mocks": "1.3.0-rc.0",
+    "bootstrap": "~3.0.3",
+    "angular-bootstrap": "~0.11.0",
+    "angular-ui-utils": "~0.1.1",
+    "angular-ui-router": "0.2.10",
+    "restangular": "~1.4.1"
+  }
+}
