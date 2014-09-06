@@ -1,22 +1,25 @@
 {
   "name": "challengewithfriends",
-  "version": "0.0.1",
-  "description": "ChallengeWithFriends",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/mgonto/meaner.git"
-  },
-  "ignore": [
-    "node_modules"
-  ],
+  "description": "A starter project for AngularJS",
+  "version": "0.0.0",
+  "homepage": "https://github.com/angular/angular-seed",
+  "license": "MIT",
+  "private": true,
   "dependencies": {
     "angular": "1.3.0-rc.0",
-    "angular-cookies": "1.3.0-rc.0",
-    "angular-mocks": "1.3.0-rc.0",
-    "bootstrap": "~3.0.3",
+    "angular-route": "1.3.0-rc.0",
+    "angular-loader": "1.3.0-rc.0",
+    "angular-mocks": "~1.3.0-rc.0",
     "angular-bootstrap": "~0.11.0",
     "angular-ui-utils": "~0.1.1",
-    "angular-ui-router": "0.2.10",
-    "restangular": "~1.4.1"
+    "angular-ui-router": "~0.2.11",
+    "angular-loading-bar": "~0.5.1",
+    "html5-boilerplate": "~4.3.0",
+    "lodash": "~2.4.1",
+    "jquery": "~2.1.1",
+    "angular-animate": "~1.2.23"
+  },
+  "resolutions": {
+    "angular": "1.3.0-rc.0"
   }
 }
