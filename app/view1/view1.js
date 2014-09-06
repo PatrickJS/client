@@ -6,9 +6,9 @@ angular.module('myApp.view1', [
 
 .config(function($stateProvider) {
   $stateProvider
-  .state('home', {
+  .state('app.home', {
     url: '/home',
-    templateUrl: '/view1/view1.html',
+    templateUrl: 'view1/view1.html',
     controller: 'View1Ctrl'
   });
 })

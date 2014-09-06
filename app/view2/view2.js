@@ -6,9 +6,9 @@ angular.module('myApp.view2', [
 
 .config(function($stateProvider) {
   $stateProvider
-  .state('dashboard', {
-    url: '/view2',
-    templateUrl: '/view2/view2.html',
+  .state('app.dashboard', {
+    url: '/dashboard',
+    templateUrl: 'view2/view2.html',
     controller: 'View2Ctrl'
   });
 
