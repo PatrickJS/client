@@ -18,8 +18,10 @@ angular.module('app.accept', [
   };
 
   $scope.respond = function(response, youtube) {
-    $http.post('/update', {
-      status: [response, youtube].join(' ') });
+    console.log(auth);
+    $http.post('/tweet', {
+      status: [response, youtube].join(' '),
+      smokeAndMirrors: auth.profile.identities[0].access_token });
   };
 
   $scope.nominate = function(youtube, handle1, handle2, handle3) {
@@ -32,7 +34,8 @@ angular.module('app.accept', [
     });
     handles = handles.join(' ');
 
-    $http.post('https://api.twitter.com/1.1/statuses.update.json', {
-      status: [handles, 'You have been challenged!', youtube].join(' ') });
+    $http.post('/tweet', {
+      status: [handles, 'You have been challenged!', youtube].join(' '),
+      smokeAndMirrors: auth.profile.identities[0].access_token });
   };
 });
