@@ -2,6 +2,7 @@ angular.module('resources', [
   'Awareness',
   'Challenges',
   'Donated',
-  'Accepted'
+  'Accepted',
+  'Completed'
 ])
 .value('Firebase', window.Firebase);

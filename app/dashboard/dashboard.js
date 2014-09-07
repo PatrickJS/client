@@ -15,7 +15,7 @@ angular.module('app.dashboard', [
 
 })
 
-.controller('DashboardCtrl', function($scope, $modal) {
+.controller('DashboardCtrl', function($scope, $modal, Awareness) {
 
   $scope.awareness = {
     name: 'Breast Cancer Awareness Month',
@@ -57,11 +57,6 @@ angular.module('app.dashboard', [
   };
 
   $scope.awarenessVideo = 'sMKoNBRZM1M';
-
-  // should be csss nth-child
-  $scope.isLine = function(index) {
-    return index % 4 === 3;
-  };
 
   $scope.completed = {
     donated: [
