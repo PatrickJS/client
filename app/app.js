@@ -32,7 +32,7 @@ angular.module('app', [
     // .when('', '/home')
     .otherwise('/dashboard');
 
-  // $locationProvider.html5Mode(true);
+  $locationProvider.hashPrefix('!')//.html5Mode(true);
 })
 
 

@@ -15,6 +15,8 @@ angular.module('app.dashboard', [
 
 })
 
-.controller('DashboardCtrl', function() {
+.controller('DashboardCtrl', function($scope) {
+
+  $scope.awarenessVideo = 'sMKoNBRZM1M';
 
 });

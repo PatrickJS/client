@@ -36,7 +36,9 @@
   <script type="text/javascript" src="/bower_components/angular-route/angular-route.js"></script>
   <script type="text/javascript" src="/bower_components/angular-animate/angular-animate.min.js"></script>
   <script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-  <script type="text/javascript" src="/bower_components/angular-ui-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script type="text/javascript" src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  <script type="text/javascript" src="/bower_components/angular-youtube-mb/dist/angular-youtube-embed.min.js"></script>
+  <script type="text/javascript" src="/bower_components/angular-disqus/angular-disqus.min.js"></script>
 
 
   <script type="text/javascript" src="app.js"></script>
@@ -53,7 +55,7 @@
 
   <script type="text/javascript">
       /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-      var disqus_shortname = 'challengewithfriends'; // required: replace example with your forum shortname
+      window.disqus_shortname = 'challengewithfriends'; // required: replace example with your forum shortname
 
       /* * * DON'T EDIT BELOW THIS LINE * * */
       (function() {
@@ -65,7 +67,12 @@
 
   <script type="text/javascript">
     angular.module('ChallengeWithFriends', [
-      'app'
+      'app',
+
+      'ngAnimate',
+      'ngDisqus',
+
+      'youtube-embed'
     ]);
 
     angular.bootstrap(document, ['ChallengeWithFriends']);
