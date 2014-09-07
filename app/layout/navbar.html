@@ -1,8 +1,29 @@
-<ul class="menu">
-  <li>
-    <a ui-sref="app.dashboard">Dashboard</a>
-  </li>
-  <li>
-    <a ui-sref="app.account">Account</a>
-  </li>
-</ul>
+<div class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ui-sref="app.dashboard">Challenge With Friends</a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li ui-sref-active="active">
+          <a ui-sref="app.dashboard">Home</a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="app.account">Account</a>
+        </li>
+        <li>
+        </li>
+      </ul>
+
+    </div><!--/.nav-collapse -->
+  </div><!--/.container-fluid -->
+</div>
