@@ -15,12 +15,7 @@ angular.module('app.dashboard', [
 
 })
 
-.controller('DashboardCtrl', function($scope, $modal, Awareness) {
-
-  $scope.awareness = {
-    name: 'Breast Cancer Awareness Month',
-    org: '@seandokko'
-  };
+.controller('DashboardCtrl', function($scope, $modal, Completed, Donated, Accepted) {
 
   $scope.challenge = function() {
    var challenge = $modal.open({
@@ -56,46 +51,7 @@ angular.module('app.dashboard', [
     });
   };
 
-  $scope.awarenessVideo = 'sMKoNBRZM1M';
-
-  $scope.completed = {
-    donated: [
-      {
-        name: 'Patrick',
-        ammount: '5677'
-      },
-      {
-        name: 'Jack Ryder',
-        ammount: '456'
-      },
-      {
-        name: 'Yolo Swag',
-        ammount: '879'
-      },
-      {
-        name: 'Yolo Swag',
-        ammount: '879'
-      },
-      {
-        name: 'Yolo Swag',
-        ammount: '879'
-      },
-      {
-        name: 'Yolo Swag',
-        ammount: '879'
-      }
-    ],
-    youtubes: [
-      { image: 'bQVoAWSP7k4'},
-      { image: 'bQVoAWSP7k4'},
-      { image: 'bQVoAWSP7k4'},
-      { image: 'bQVoAWSP7k4'},
-
-      { image: 'bQVoAWSP7k4'},
-      { image: 'bQVoAWSP7k4'},
-      { image: 'bQVoAWSP7k4'},
-      { image: 'bQVoAWSP7k4'}
-    ]
-  };
+  $scope.donated  = Donated.$asArray();
+  $scope.accepted = Accepted.$asArray();
 
 });
