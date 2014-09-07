@@ -5,7 +5,7 @@ angular.module('app.accept', [
   'ui.bootstrap'
 ])
 
-.controller('AcceptModalCtrl', function($scope, $modalInstance, twitter) {
+.controller('AcceptModalCtrl', function($scope, $modalInstance, $http, auth, twitter) {
   $scope.twitter_handle = twitter;
 
   $scope.ok = function(amount) {
@@ -15,7 +15,23 @@ angular.module('app.accept', [
   $scope.cancel = function() {
     $modalInstance.dismiss('cancel');
   };
+
+  $scope.respond = function(response, youtube) {
+    $http.post('/update', {
+      status: [response, youtube].join(' ') });
+  };
+
+  $scope.nominate = function(youtube, handle1, handle2, handle3) {
+    var handles = [handle1, handle2, handle3];
+    handles = handles.map(function(handle) {
+      if (handle) {
+        handle.replace(/^@/, '');
+        return '@' + handle;
+      }
+    });
+    handles = handles.join(' ');
+
+    $http.post('https://api.twitter.com/1.1/statuses.update.json', {
+      status: [handles, 'You have been challenged!', youtube].join(' ') });
+  };
 });
-
-
-
