@@ -5,4 +5,4 @@ angular.module('resources', [
   'Accepted',
   'Completed'
 ])
-.value('Firebase', window.Firebase);
+// .value('Firebase', window.Firebase);

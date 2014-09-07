@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('awareness', [])
+angular.module('Awareness', [])
 
 .factory('Awareness', function(Firebase, $firebase) {
   var ref = new Firebase('https://ChallengeWithFriends.firebaseio.com/awareness');
