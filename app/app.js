@@ -4,7 +4,8 @@
 angular.module('app', [
   'ui.router',
   'app.dashboard',
-  'app.account'
+  'app.account',
+  'app.challenge'
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -32,7 +33,7 @@ angular.module('app', [
     // .when('', '/home')
     .otherwise('/dashboard');
 
-  $locationProvider.hashPrefix('!')//.html5Mode(true);
+  $locationProvider.hashPrefix('!');//.html5Mode(true);
 })
 
 
