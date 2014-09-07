@@ -28,12 +28,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .donated {
-  border-radius: 5px;
-  border: 1px solid #eee;
-  padding: 5px;
 }
 .donated h3 {
-  margin-top: 0px;
 }
 
 .menu {
