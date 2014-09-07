@@ -7,28 +7,35 @@ angular.module('app.dashboard', [
 .config(function($stateProvider) {
   $stateProvider
   .state('app.dashboard', {
-    url: '/dashboard',
+    url: '/dashboard?twitter&youtube',
     templateUrl: 'dashboard/dashboard.html',
     controller: 'DashboardCtrl'
+    // resolve: {
+    //   challenge: function($stateParams) {
+    //     return ($stateParams.twitter && $stateParams.youtube) && $stateParams;
+    //   }
+    // }
   });
 
 
 })
 
-.controller('DashboardCtrl', function($scope, $modal) {
+.controller('DashboardCtrl', function($scope, $stateParams, $modal, Donated, Accepted) {
 
-  $scope.awareness = {
-    name: 'Breast Cancer Awareness Month',
-    org: '@seandokko'
-  };
+  $scope.twitter_handle = $stateParams.twitter;
+  $scope.youtube_url = $stateParams.youtube;
 
-  $scope.challenge = function() {
+
+
+  $scope.challenge = function(twitter, youtube) {
    var challenge = $modal.open({
       // there is no templateProvider but you can return a promise
       templateUrl: 'challenge/challenge.html',
       controller: 'ChallengeModalCtrl',
       size: 'lg',
       resolve: {
+        twitter: twitter || null,
+        youtube: youtube || null
       }
 
     });
@@ -38,6 +45,13 @@ angular.module('app.dashboard', [
 
     });
   };
+
+  console.warn('YOLO', $stateParams);
+  if ($stateParams.twitter && $stateParams.youtube) {
+    console.warn('BROLO', $stateParams);
+    $scope.challenge($stateParams.twitter && $stateParams.youtube);
+  }
+
 
   $scope.donate = function() {
    var donateModal = $modal.open({
@@ -56,51 +70,9 @@ angular.module('app.dashboard', [
     });
   };
 
-  $scope.awarenessVideo = 'sMKoNBRZM1M';
+  $scope.awarenessVideo = '-DdslyCHZX0';
 
-  // should be csss nth-child
-  $scope.isLine = function(index) {
-    return index % 4 === 3;
-  };
-
-  $scope.completed = {
-    donated: [
-      {
-        name: 'Patrick',
-        ammount: '5677'
-      },
-      {
-        name: 'Jack Ryder',
-        ammount: '456'
-      },
-      {
-        name: 'Yolo Swag',
-        ammount: '879'
-      },
-      {
-        name: 'Yolo Swag',
-        ammount: '879'
-      },
-      {
-        name: 'Yolo Swag',
-        ammount: '879'
-      },
-      {
-        name: 'Yolo Swag',
-        ammount: '879'
-      }
-    ],
-    youtubes: [
-      { image: 'bQVoAWSP7k4'},
-      { image: 'bQVoAWSP7k4'},
-      { image: 'bQVoAWSP7k4'},
-      { image: 'bQVoAWSP7k4'},
-
-      { image: 'bQVoAWSP7k4'},
-      { image: 'bQVoAWSP7k4'},
-      { image: 'bQVoAWSP7k4'},
-      { image: 'bQVoAWSP7k4'}
-    ]
-  };
+  $scope.donated  = Donated.$asArray();
+  $scope.accepted = Accepted.$asArray();
 
 });

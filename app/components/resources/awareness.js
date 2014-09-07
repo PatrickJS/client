@@ -1,12 +1,9 @@
 'use strict';
 
-angular.module('awareness', [])
+angular.module('Awareness', [])
 
-.factory('Awareness', function($q, $http) {
-
-  var module = {
-
-  };
-
-  return module;
+.factory('Awareness', function(Firebase, $firebase) {
+  var ref = new Firebase('https://ChallengeWithFriends.firebaseio.com/awareness');
+  // create an AngularFire reference to the data
+  return $firebase(ref);
 });
