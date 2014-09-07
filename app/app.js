@@ -5,7 +5,8 @@ angular.module('app', [
   'ui.router',
   'app.dashboard',
   'app.account',
-  'app.challenge'
+  'app.challenge',
+  'auth0'
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -36,8 +37,38 @@ angular.module('app', [
   $locationProvider.hashPrefix('!');//.html5Mode(true);
 })
 
+.config(function(authProvider, $httpProvider) {
 
-.controller('NavbarCtrl', function() {
+  // routing configuration and other stuff
+  // ...
+
+  authProvider.init({
+    domain: 'challengewithfriends.auth0.com',
+    clientId: 'FiE9HeGV1rmknSjq6wQOYOU7VTMFXYaI',
+    clientID: 'FiE9HeGV1rmknSjq6wQOYOU7VTMFXYaI'
+    // loginUrl: '/login',
+    // callbackUrl: location.href
+  });
+
+  // This automatically adds the token in every request
+  $httpProvider.interceptors.push('authInterceptor');
+
+})
+
+.run(function(auth) {
+  auth.hookEvents();
+})
+
+.controller('NavbarCtrl', function($scope, auth) {
+ $scope.signin = function() {
+    auth.signin({popup: true}, function() {
+      // $location.path('/user-info')
+
+    }, function(err) {
+      console.log('Error :(', err);
+    });
+  };
+
 
 })
 
