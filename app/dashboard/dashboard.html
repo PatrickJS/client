@@ -48,13 +48,13 @@
 
         <h3>Accepted</h3>
         <div class="row">
-          <div class="youtubeWrapper" ng-repeat="youtube in completed.youtubes">
+          <div class="youtubeWrapper" ng-repeat="youtube in accepted">
             <div class="col-sm-3">
               <div class="contributors">
-                <a ng-href="https://www.youtube.com/watch?v={{ youtube.image }}">
-                    Name {{ youtube.title }}
+                <a ng-href="https://www.youtube.com/watch?v={{ youtube.$value }}">
+                    Name {{ youtube.$id }}
                 </a>
-                <img ng-src="https://img.youtube.com/vi/{{ youtube.image }}/default.jpg">
+                <img ng-src="https://img.youtube.com/vi/{{ youtube.$value }}/default.jpg">
               </div>
             </div>
           </div>
@@ -88,9 +88,9 @@
           Donated
         </h3>
         <ol>
-          <li class="" ng-repeat="user in completed.donated">
-            {{ user.name }}
-            {{ user.ammount }}
+          <li class="" ng-repeat="donor in donated">
+            @<b>{{ donor.$id }}</b>
+            <em>{{ donor.$value | currency }}</em>
           </li>
         </ol>
       </div>
