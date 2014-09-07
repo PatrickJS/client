@@ -41,9 +41,6 @@ angular.module('app', [
 
 .config(function(authProvider, $httpProvider) {
 
-  // routing configuration and other stuff
-  // ...
-
   authProvider.init({
     domain: 'challengewithfriends.auth0.com',
     clientId: 'FiE9HeGV1rmknSjq6wQOYOU7VTMFXYaI',
