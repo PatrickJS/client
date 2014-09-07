@@ -5,7 +5,7 @@ angular.module('app.challenge', [
   'ui.bootstrap'
 ])
 
-.controller('ChallengeModalCtrl', function($rootScope, $scope, $modalInstance, $http, $timeout, twitter_handle) {
+.controller('ChallengeModalCtrl', function(e, $scope, $modalInstance, $http, $timeout, twitter, youtube) {
   $scope.ok = function(amount) {
     var node = angular.element(document.createElement('div'));
     var button = angular.element([
@@ -14,7 +14,7 @@ angular.module('app.challenge', [
         'data-name="Breast Cancer Awareness Month"',
         'data-amount="' + amount + '"',
         'data-currency="USD"',
-        'data-callback="http://challengewithfriends.com/paid/' + twitter_handle + '"',
+        'data-callback="http://challengewithfriends.com/paid/' + twitter + '"',
         'data-env="sandbox"',
       '></script>'].join(' '));
     node.append(button);

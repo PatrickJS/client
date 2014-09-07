@@ -56,7 +56,8 @@ angular.module('app', [
 
 })
 
-.run(function(auth) {
+.run(function($rootScope, $stateParams, auth) {
+  $rootScope.$stateParams = $stateParams;
   auth.hookEvents();
 })
 
@@ -87,6 +88,7 @@ angular.module('app', [
 })
 
 .controller('AppCtrl', function() {
+
 
 })
 
