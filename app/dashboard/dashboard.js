@@ -18,8 +18,8 @@ angular.module('app.dashboard', [
 .controller('DashboardCtrl', function($scope, $modal) {
 
   $scope.awareness = {
-    name: 'Yolo Swag',
-    org: 'Swag Org'
+    name: 'Breast Cancer Awareness Month',
+    org: '@seandokko'
   };
 
   $scope.challenge = function() {

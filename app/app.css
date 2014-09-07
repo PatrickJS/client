@@ -9,10 +9,12 @@ h1, h2, h3, h4, h5 {
 }
 
 .navbar-controls {
+  float: right;
   margin-top: 25px;
 }
 
 .navbar-controls a {
+  float: right;
   margin-left: 10px;
 }
 
@@ -50,6 +52,14 @@ h1, h2, h3, h4, h5 {
   padding: 0;
 }
 
+.contributors {
+  float: left;
+  margin-right: 10px;
+}
+
+.contributors a {
+  display: block;
+}
 
 .video { position: relative; }
 
