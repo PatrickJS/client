@@ -1,14 +1,99 @@
-<p>Dashboard</p>
-<youtube-video id="good-vid" video-url="awarenessVideo"></youtube-video>
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
+<div class="container">
+  <center>
+    <h1>
+      {{ awareness.name }}
+    </h1>
+    <h5>
+      by: {{ awareness.org }}
+    </h5>
+  </center>
 
+    <br>
+
+    <div class="row">
+      <div class="col-md-8">
+
+        <div class="videoWrapper">
+          <youtube-video id="good-vid" video-url="awarenessVideo"></youtube-video>
+        </div>
+
+      </div>
+      <div class="col-md-4">
+
+        <button class="btn btn-default btn-lg" ng-click="challenge()">Accept</button>
+        <button class="btn btn-default btn-lg"  ng-click="challenge()">Donate</button>
+
+      </div>
+    </div>
+
+
+  <div class="row">
+    <div class="col-md-8">
+
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+        <span class="youtubeWrapper" ng-repeat="youtube in completed.youtubes">
+          <img
+            ng-src="https://img.youtube.com/vi/{{ youtube.image }}/default.jpg"
+          >
+          <a ng-href="https://www.youtube.com/watch?v={{ youtube.image }}">
+            yolo{{ youtube.title }}
+          </a>
+          <br ng-if="isLine($index)">
+        </span>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+
+    </div>
+    <div class="col-md-4">
+      <h3>
+        Donated
+      </h3>
+      <ul>
+        <li class="" ng-repeat="user in completed.donated">
+          {{ user.name }}
+          {{ user.ammount }}
+        </li>
+      </ul>
+
+
+    </div>
+  </div>
+
+
+</div>
 
 <div disqus="'challengewithfriends'"></div>
 <!-- <div id="disqus_thread"></div> -->
