@@ -1,4 +1,17 @@
 /* app css stylesheet */
+h1, h2, h3, h4, h5 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: lighter;
+}
+
+.header {
+  margin: 100px 0 25px 0;
+}
+
+.header a {
+  text-decoration: none;
+  color: black;
+}
 
 .menu {
   list-style: none;
@@ -61,10 +74,13 @@
   height: auto;
 }
 
+.control-buttons {
+  padding: 15px 0;
+}
+
 footer {
   height: 60px;
-  padding: 20px 0;
-  background-color: rgb(245, 245, 245);
+  padding: 75px 0;
 }
 
 footer .container {
