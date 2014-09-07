@@ -21,7 +21,8 @@ angular.module('app.accept', [
     console.log(auth);
     $http.post('/tweet', {
       status: [response, youtube].join(' '),
-      smokeAndMirrors: auth.profile.identities[0].access_token });
+      token: auth.profile.identities[0].access_token,
+      tokenSecret: auth.profile.identities[0].access_token_secret });
   };
 
   $scope.nominate = function(youtube, handle1, handle2, handle3) {
@@ -36,6 +37,7 @@ angular.module('app.accept', [
 
     $http.post('/tweet', {
       status: [handles, 'You have been challenged!', youtube].join(' '),
-      smokeAndMirrors: auth.profile.identities[0].access_token });
+      token: auth.profile.identities[0].access_token,
+      tokenSecret: auth.profile.identities[0].access_token_secret });
   };
 });
