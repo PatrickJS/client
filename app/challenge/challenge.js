@@ -5,7 +5,12 @@ angular.module('app.challenge', [
   'ui.bootstrap'
 ])
 
-.controller('ChallengeModalCtrl', function($scope, $modalInstance) {
+.controller('ChallengeModalCtrl', function($scope, $modalInstance, twitter, youtube) {
+
+  $scope.twitter_handle = twitter;
+  $scope.youtube_url = youtube;
+
+
   $scope.ok = function() {
     $modalInstance.close();
   };

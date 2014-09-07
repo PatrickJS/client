@@ -9,12 +9,39 @@ angular.module('app.dashboard', [
   .state('app.dashboard', {
     url: '/dashboard?twitter&youtube',
     templateUrl: 'dashboard/dashboard.html',
-    controller: 'DashboardCtrl'
+    controller: 'DashboardCtrl',
     // resolve: {
     //   challenge: function($stateParams) {
     //     return ($stateParams.twitter && $stateParams.youtube) && $stateParams;
     //   }
-    // }
+    // },
+    //
+    onEnter: function($modal, $stateParams) {
+      if ($stateParams.twitter && $stateParams.youtube) {
+
+        var challenge = $modal.open({
+          // there is no templateProvider but you can return a promise
+          templateUrl: 'challenge/challenge.html',
+          controller: 'ChallengeModalCtrl',
+          size: 'lg',
+          resolve: {
+            twitter: function() {
+              return $stateParams.twitter || null;
+            },
+            youtube: function() {
+              return $stateParams.youtube || null;
+            }
+          }
+
+        });
+        challenge.result.then(function() {
+
+        })['catch'](function() {
+
+        });
+
+      } // end if
+    } // end enter
   });
 
 
@@ -46,11 +73,7 @@ angular.module('app.dashboard', [
     });
   };
 
-  console.warn('YOLO', $stateParams);
-  if ($stateParams.twitter && $stateParams.youtube) {
-    console.warn('BROLO', $stateParams);
-    $scope.challenge($stateParams.twitter && $stateParams.youtube);
-  }
+
 
 
   $scope.donate = function() {
