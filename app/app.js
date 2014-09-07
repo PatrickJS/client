@@ -59,6 +59,12 @@ angular.module('app', [
   auth.hookEvents();
 })
 
+.factory('Firebase', function() {
+  var ref = new Firebase('https://ChallengeWithFriends.firebaseio.com/');
+  // create an AngularFire reference to the data
+  return $firebase(ref);
+})
+
 .controller('NavbarCtrl', function($scope, auth) {
   var social = [
     'paypal',
