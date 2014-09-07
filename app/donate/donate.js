@@ -5,9 +5,13 @@ angular.module('app.donate', [
   'ui.bootstrap'
 ])
 
-.controller('DonateModalCtrl', function($scope, $modalInstance) {
-  $scope.ok = function() {
-    $modalInstance.close();
+.controller('DonateModalCtrl', function($rootScope, $scope, $modalInstance, $timeout, twitter) {
+  $scope.ok = function(amount) {
+    var form = $('#paypalform');
+    form.find('[name="amount"]').val(amount);
+    form.find('[name="notify_url"]').val(
+      'http://challengewithfriends.com/paid/' + twitter);
+    form.find('button').click();
   };
 
   $scope.cancel = function() {

@@ -5,26 +5,12 @@ angular.module('app.challenge', [
   'ui.bootstrap'
 ])
 
-.controller('ChallengeModalCtrl', function(e, $scope, $modalInstance, $http, $timeout, twitter, youtube) {
-  $scope.ok = function(amount) {
-    var node = angular.element(document.createElement('div'));
-    var button = angular.element([
-      '<script src="//www.paypalobjects.com/js/external/paypal-button.min.js?merchant=challengewithfriends@gdi2290.com"',
-        'data-button="donate"',
-        'data-name="Breast Cancer Awareness Month"',
-        'data-amount="' + amount + '"',
-        'data-currency="USD"',
-        'data-callback="http://challengewithfriends.com/paid/' + twitter + '"',
-        'data-env="sandbox"',
-      '></script>'].join(' '));
-    node.append(button);
-    angular.element(document.querySelector('div')).append(node);
-    // Load the element (using the ng-if in index.html)
-    $rootScope.donate = true;
+.controller('ChallengeModalCtrl', function($scope, $modalInstance, twitter, youtube) {
+  $scope.twitter_handle = twitter;
+  $scope.youtube_url = youtube;
 
-    $timeout(function() {
-      node.find('button').click();
-    });
+  $scope.ok = function(amount) {
+    $modalInstance.close();
   };
 
   $scope.cancel = function() {

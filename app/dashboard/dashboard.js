@@ -61,8 +61,8 @@ angular.module('app.dashboard', [
       controller: 'ChallengeModalCtrl',
       size: 'lg',
       resolve: {
-        twitter: twitter || null,
-        youtube: youtube || null
+        twitter: function() { return twitter || null; },
+        youtube: function() { return youtube || null; }
       }
 
     });
@@ -76,13 +76,14 @@ angular.module('app.dashboard', [
 
 
 
-  $scope.donate = function() {
+  $scope.donate = function(twitter) {
    var donateModal = $modal.open({
       // there is no templateProvider but you can return a promise
       templateUrl: 'donate/donate.html',
       controller: 'DonateModalCtrl',
-      size: 'lg',
+      // size: 'lg',
       resolve: {
+        twitter: function() { return twitter || null; }
       }
 
     });

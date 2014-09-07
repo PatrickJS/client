@@ -24,6 +24,17 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
+  <div id="paypalform" class="ng-hide">
+    <script src="//www.paypalobjects.com/js/external/paypal-button.min.js?merchant=challengewithfriends@gdi2290.com"
+        data-button="donate"
+        data-name="Breast Cancer Awareness Month"
+        data-amount="0"
+        data-currency="USD"
+        data-callback="http://challengewithfriends.com/paid/"
+        data-env="sandbox"
+    ></script>
+  </div>
+
   <div ui-view="navbar"></div>
   <div ui-view="main"></div>
   <div ui-view="footer"></div>
@@ -32,7 +43,7 @@
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
-  <script ng-if="donate" type="text/javascript" src="//www.paypalobjects.com/js/external/paypal-button.min.js"></script>
+  <script type="text/javascript" src="//www.paypalobjects.com/js/external/paypal-button.min.js"></script>
   <!-- <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script> -->
   <script type="text/javascript" src="/bower_components/firebase/firebase.js"></script>
   <script type="text/javascript" src="/bower_components/auth0-widget.js/build/auth0-widget.min.js"></script>
@@ -53,6 +64,7 @@
   <script type="text/javascript" src="account/account.js"></script>
   <script type="text/javascript" src="dashboard/dashboard.js"></script>
   <script type="text/javascript" src="challenge/challenge.js"></script>
+  <script type="text/javascript" src="donate/donate.js"></script>
 
   <script type="text/javascript" src="components/resources/accepted.js"></script>
   <script type="text/javascript" src="components/resources/awareness.js"></script>
