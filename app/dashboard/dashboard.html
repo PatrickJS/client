@@ -59,12 +59,15 @@
 
         <h3>Backers</h3>
         <span class="youtubeWrapper" ng-repeat="youtube in completed.youtubes">
-          <img
-            ng-src="https://img.youtube.com/vi/{{ youtube.image }}/default.jpg"
-          >
-          <a ng-href="https://www.youtube.com/watch?v={{ youtube.image }}">
-            yolo{{ youtube.title }}
-          </a>
+          <div class="contributors">
+            <a ng-href="https://www.youtube.com/watch?v={{ youtube.image }}">
+              yolo{{ youtube.title }}
+            </a>
+            <img
+              ng-src="https://img.youtube.com/vi/{{ youtube.image }}/default.jpg"
+            >
+            
+          </div>
           <br ng-if="isLine($index)">
         </span>
 

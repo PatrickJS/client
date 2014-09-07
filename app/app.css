@@ -8,6 +8,14 @@ h1, h2, h3, h4, h5 {
   margin: 100px 0 25px 0;
 }
 
+.navbar-controls {
+  margin-top: 25px;
+}
+
+.navbar-controls a {
+  margin-left: 10px;
+}
+
 .header a {
   text-decoration: none;
   color: black;
@@ -79,8 +87,7 @@ h1, h2, h3, h4, h5 {
 }
 
 footer {
-  height: 60px;
-  padding: 75px 0;
+  padding: 25px 0;
 }
 
 footer .container {
