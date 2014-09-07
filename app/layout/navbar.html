@@ -39,7 +39,9 @@
       </div>
       <div class="col-sm-2">
         <div class="navbar-controls">
-          <button class="btn btn-primary" ng-click="signin()">Login</button>
+          <button class="btn btn-primary" ng-click="signin()" ng-hide="auth.isAuthenticated">Login</button>
+
+          <button class="btn btn-primary" ng-click="signout()" ng-show="auth.isAuthenticated">Logout</button>
         </div>
       </div>
     </div>

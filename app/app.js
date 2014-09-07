@@ -29,7 +29,11 @@ angular.module('app', [
           templateUrl: 'layout/footer.html',
           controller: 'FooterCtrl'
         }
+      },
+      data: {
+        requiresLogin: true
       }
+
     });
 
   $urlRouterProvider
@@ -55,8 +59,29 @@ angular.module('app', [
 })
 
 .run(function($rootScope, $stateParams, auth) {
+  // var social = [
+  //   'paypal',
+  //   // 'google-oauth2',
+  //   'twitter'
+  //   // 'Username-Password-Authentication'
+  // ];
+
   $rootScope.$stateParams = $stateParams;
   auth.hookEvents();
+
+  // $rootScope.$on('auth0.forbidden', function() {
+  //   auth.signin({
+  //    connections: social,
+  //     popup: true,
+  //     icon: false,
+  //     showIcon: false
+  //   }, function() {
+  //     // $location.path('/user-info')
+
+  //   }, function(err) {
+  //     console.log('Error :(', err);
+  //   });
+  // });
 })
 
 
@@ -67,6 +92,8 @@ angular.module('app', [
     'twitter'
     // 'Username-Password-Authentication'
   ];
+
+  $scope.auth = auth;
 
   $scope.signin = function() {
     auth.signin({
@@ -80,6 +107,14 @@ angular.module('app', [
     }, function(err) {
       console.log('Error :(', err);
     });
+  };
+
+  if (!auth.isAuthenticated) {
+    $scope.signin();
+  }
+
+  $scope.signout = function() {
+    auth.signout();
   };
 
 
