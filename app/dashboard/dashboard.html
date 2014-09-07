@@ -47,26 +47,37 @@
         </p>
 
         <h3>Backers</h3>
-        <span class="youtubeWrapper" ng-repeat="youtube in completed.youtubes">
-          <div class="contributors">
-            <a ng-href="https://www.youtube.com/watch?v={{ youtube.image }}">
-              yolo{{ youtube.title }}
-            </a>
-            <img ng-src="https://img.youtube.com/vi/{{ youtube.image }}/default.jpg">
+        <div class="row">
+        <div class="youtubeWrapper" ng-repeat="youtube in completed.youtubes">
+          <div class="col-sm-3">
+            <div class="contributors">
+              <a ng-href="https://www.youtube.com/watch?v={{ youtube.image }}">
+                  Name {{ youtube.title }}
+              </a>
+              <img ng-src="https://img.youtube.com/vi/{{ youtube.image }}/default.jpg">
+              </div>
+            </div>
           </div>
-        </span>
+        </div>
 
     </div>
     <div class="col-md-4">
-      <h3>
-        Donated
-      </h3>
-      <ol>
-        <li class="" ng-repeat="user in completed.donated">
-          {{ user.name }}
-          {{ user.ammount }}
-        </li>
-      </ol>
+      <div class="donated">
+        <h3>
+          Donated
+        </h3>
+        <ol>
+          <li class="" ng-repeat="user in completed.donated">
+            {{ user.name }}
+            {{ user.ammount }}
+          </li>
+        </ol>
+      </div>
+
+      <div class="tweets">
+        <a class="twitter-timeline" height="200" border-color="#fff" href="https://twitter.com/ChallengeWF" data-widget-id="508497730130280448">Tweets by @ChallengeWF</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      </div>
 
 
     </div>
