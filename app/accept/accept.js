@@ -5,11 +5,12 @@ angular.module('app.accept', [
   'ui.bootstrap'
 ])
 
-.controller('AcceptModalCtrl', function($scope, $modalInstance, $http, auth, twitter) {
+.controller('AcceptModalCtrl', function($scope, $modalInstance, $http, youtubeEmbedUtils, auth, twitter) {
   $scope.twitter_handle = twitter;
 
-  $scope.ok = function(amount) {
-    $modalInstance.close();
+  $scope.ok = function(youtube) {
+    var youtube_id = youtubeEmbedUtils.getIdFromURL(youtube);
+    $modalInstance.close({twitter: twitter, youtube: youtube_id});
   };
 
   $scope.cancel = function() {

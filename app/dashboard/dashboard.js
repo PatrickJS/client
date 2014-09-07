@@ -76,10 +76,15 @@ angular.module('app.dashboard', [
         }
       });
 
-      accept.result.then(function() {
-        // TODO: Add acceptance to firebase
+      return accept.result.then(function(obj) {
+        return {twitter: obj.twitter, youtube: obj.youtube};
+      });
+    })
+    .then(function(res) {
+      console.log(res.twitter, res.youtube);
+      Accepted.$set(res.twitter, res.youtube);
+      // TODO: Add acceptance to firebase
 
-      })
     })['catch'](function() {
 
     });
