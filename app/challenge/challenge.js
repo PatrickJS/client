@@ -14,7 +14,6 @@ angular.module('app.challenge', [
     return $sce.trustAsResourceUrl(src);
   };
 
-
   $scope.ok = function(amount) {
     $modalInstance.close();
   };

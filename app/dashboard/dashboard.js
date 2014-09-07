@@ -67,7 +67,19 @@ angular.module('app.dashboard', [
 
     });
     challenge.result.then(function() {
+      var accept = $modal.open({
+        templateUrl: 'accept/accept.html',
+        controller: 'AcceptModalCtrl',
+        //size: 'lg',
+        resolve: {
+          twitter: function() { return twitter || null; }
+        }
+      });
 
+      accept.result.then(function() {
+        // TODO: Add acceptance to firebase
+
+      })
     })['catch'](function() {
 
     });
