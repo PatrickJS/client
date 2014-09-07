@@ -39,6 +39,17 @@ h1, h2, h3, h4, h5 {
   padding: 0 0 0.5em;
 }
 
+.friends {
+  width: 100%;
+}
+
+.friends input {
+  margin-top: 10px;
+  width: 31%;
+  float: left;
+  margin-right: 10px;
+}
+
 .menu:before {
   content: "[";
 }
