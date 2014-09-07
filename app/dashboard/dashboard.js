@@ -15,7 +15,7 @@ angular.module('app.dashboard', [
 
 })
 
-.controller('DashboardCtrl', function($scope, $modal, Completed, Donated, Accepted) {
+.controller('DashboardCtrl', function($scope, $modal, Donated, Accepted) {
 
   $scope.challenge = function() {
    var challenge = $modal.open({

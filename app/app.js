@@ -6,6 +6,7 @@ angular.module('app', [
   'app.dashboard',
   'app.account',
   'app.challenge',
+  'resources',
   'auth0'
 ])
 

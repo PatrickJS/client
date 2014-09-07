@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('challenges', [])
+angular.module('Challenges', [])
 
 .factory('Challenges', function($q, $http) {
 
