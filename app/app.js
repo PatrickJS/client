@@ -5,7 +5,7 @@ angular.module('app', [
   'ngRoute',
   'ui.router',
   'app.dashboard',
-  'app.view1',
+  'app.account',
   'app.version'
 ])
 
