@@ -4,29 +4,36 @@
     <h3 class="modal-title">Challenge your friends and spread the word!</h3>
   </div>
   <div class="modal-body">
-    <div>
-      <b>Show us your challenge! Enter the youtube url here:</b><br /><br />
-      <input class="col-lg-12" type="url" ng-model="youtube" autofocus placeholder="Anything you can do I can do better...">
-    </div>
-    <br /><br />
-
-    <div>
-      <input class="col-lg-12" type="text" ng-model="response" placeholder="Anything you can do I can do too..."><br />
-      <button class="col-lg-12 btn btn-success" ng-click="respond(response, youtube)">Tweet @{{twitter_handle}} your response</button>
-      <div><br /><br /></div>
+    <div class="form-group">
+      <h5>Step 1</h5>
+      <label for="funnel-1">Show us your challenge! Enter the youtube url here:</label>
+      <input class="form-control" id="funnel-1" type="url" ng-model="youtube" autofocus placeholder="Anything you can do I can do better...">
     </div>
 
-    <div>
-      <input class="col-lg-4" type="text" ng-model="handle1" placeholder="@peter">
-      <input class="col-lg-4" type="text" ng-model="handle2" placeholder="@paul">
-      <input class="col-lg-4" type="text" ng-model="handle3" placeholder="@barracuda"><br />
-      <button class="col-lg-12 btn btn-success" ng-click="nominate(youtube, handle1, handle2, handle3)">Nominate your friends</button>
-      <div><br /></div>
+    <div class="form-group">
+      <h5>Step 2</h5>
+      <label for="funnel-2">Say something on Twitter</label>
+      <textarea class="form-control" id="funnel-2" type="text" ng-model="response" placeholder="Anything you can do I can do too..."></textarea>
+      <br>
+      <button class="btn btn-success" ng-click="respond(response, youtube)">Tweet @{{twitter_handle}} your response</button>
+    </div>
+
+    <div class="form-group">
+      <h5>Step 3</h5>
+      <label for="funnel-3">Challenge your friends</label>
+      <div class="friends">
+        <input class="form-control" type="text" ng-model="handle1" placeholder="@peter">
+        <input class="form-control" type="text" ng-model="handle2" placeholder="@paul">
+        <input class="form-control" type="text" ng-model="handle3" placeholder="@barracuda"><br />
+      </div>
+      <br>
+      <br>
+      <button class="btn btn-success" ng-click="nominate(youtube, handle1, handle2, handle3)">Nominate your friends</button>
     </div>
   </div>
 
   <div class="modal-footer">
-    <button ng-click="ok(youtube)" class="btn btn-primary">OK</button>
+    <button ng-click="ok(youtube)" class="btn btn-primary">Done!</button>
     <button ng-click="cancel()" class="btn btn-warning">Cancel</button>
   </div>
 </div>
