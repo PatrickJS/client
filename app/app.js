@@ -2,11 +2,9 @@
 
 // Declare app level module which depends on views, and components
 angular.module('app', [
-  'ngRoute',
   'ui.router',
   'app.dashboard',
-  'app.account',
-  'app.version'
+  'app.account'
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
