@@ -60,8 +60,20 @@ angular.module('app', [
 })
 
 .controller('NavbarCtrl', function($scope, auth) {
- $scope.signin = function() {
-    auth.signin({popup: true}, function() {
+  var social = [
+    'paypal',
+    // 'google-oauth2',
+    'twitter'
+    // 'Username-Password-Authentication'
+  ];
+
+  $scope.signin = function() {
+    auth.signin({
+     connections: social,
+      popup: true,
+      icon: false,
+      showIcon: false
+    }, function() {
       // $location.path('/user-info')
 
     }, function(err) {
